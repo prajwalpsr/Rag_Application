@@ -70,8 +70,8 @@ async def rag_query_search(ctx: inngest.Context) -> RAGQueryResult:
     }
 
     adapter = ai.openai.Adapter(
-        base_url="http://127.0.0.1:11434/v1",   
-        model="llama3.2:latest",                      
+        base_url=os.environ["LLM_URL"],   
+        model=os.environ["LLM_MODEL"],                      
         auth_key=""                            
     )
 

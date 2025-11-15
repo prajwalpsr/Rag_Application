@@ -1,12 +1,14 @@
 from langchain_ollama import OllamaEmbeddings, OllamaLLM
 from llama_index.readers.file import PDFReader
 from llama_index.core.node_parser import SentenceSplitter
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
+import os
 
-load_dotenv()
+load_dotenv(find_dotenv(), override=True)
 
-EMBED_MODEL = "embeddinggemma:300m"
-EMBED_DIM = 768
+EMBED_MODEL = os.environ["EMBED_MODEL"]
+EMBED_DIM = os.environ["EMBED_DIM"]
+
 client = OllamaEmbeddings(model=EMBED_MODEL)
 
 splitter = SentenceSplitter(chunk_size=1000, chunk_overlap=200)

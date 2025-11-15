@@ -1,8 +1,12 @@
 from qdrant_client import QdrantClient
 from qdrant_client.models import VectorParams, Distance, PointStruct
+import os 
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv(), override=True)
 
 class QdrantStorage:
-    def __init__(self, url="http://localhost:6333", collection="docs", dim=768):  # 3072 for open AI text-embedding-large model / 768 for open source gemmamodel
+    def __init__(self, url=os.environ["QDRANT_URL"], collection="docs", dim=os.environ["EMBED_DIM"]):  # 3072 for open AI text-embedding-large model / 768 for open source gemmamodel
         self.client = QdrantClient(url=url, timeout=30)
         self.collection = collection
         if not self.client.collection_exists(self.collection):
