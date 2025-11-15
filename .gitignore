@@ -1,0 +1,16 @@
+# Ignore Qdrant local storage
+qdrant_storage/
+qdrant/
+data/
+*.lock
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.env
+.venv
+
+# OS files
+.DS_Store
+Thumbs.db
