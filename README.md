@@ -1,33 +1,57 @@
-# Rag_Application
-Simple RAG app using open-source LLMs &amp; vector DBs — local embeddings, retrieval, and generation (Ollama/Inngest/Qdrant)
+# 🚀 Simple RAG Application  
+### **Qdrant + LlamaIndex + Ollama + FastAPI + Inngest + Streamlit**
 
+A fully open-source Retrieval-Augmented Generation (RAG) application built using:
 
-# Simple RAG Application (Qdrant + LlamaIndex + Ollama + Inngest)
+- **Qdrant** – Vector Database  
+- **LlamaIndex** – Chunking, Embeddings & RAG Engine  
+- **Ollama** – Local LLM Inference (Llama3 or any open model)  
+- **FastAPI** – Backend API  
+- **Inngest** – Background workflows for ingestion  
+- **Streamlit** – Frontend UI  
+- **uv** – Fast Python environment manager and dependency installer
 
-A lightweight Retrieval-Augmented Generation (RAG) application built entirely with **open-source tools**.  
-This project demonstrates how to ingest documents, store embeddings in Qdrant, retrieve relevant chunks using LlamaIndex, generate answers with Ollama-hosted LLMs, and orchestrate background tasks using Inngest.
-
----
-
-## 🚀 Tech Stack
-
-### **Core Components**
-- **Ollama** – local LLM runtime for fast, offline text generation  
-- **LlamaIndex** – indexing, retrieval, query engine, RAG orchestration  
-- **Qdrant** – high-performance vector database for embedding storage  
-- **Inngest** – background workflows for ingestion, chunking, vector updates, etc.
+This project demonstrates how to build a clean, local-first RAG pipeline that requires **no paid APIs** and can run completely offline.
 
 ---
 
-## 📌 Features
+# 📦 Features
 
-- Ingest PDFs, text, or markdown files  
-- Automatic chunking + embedding generation via LlamaIndex  
-- Vector storage & similarity search using **Qdrant**  
-- Local LLM inference powered by **Ollama**  
-- Async workflows triggered via **Inngest**  
-- Clean retrieval pipeline (top-k search → context → prompt construction)  
-- FastAPI-based API endpoints for chat/query  
-- Source citations + provenance in responses  
+- 📄 PDF / TXT / MD document ingestion  
+- 🔍 Vector search using Qdrant  
+- 🤖 Local LLM inference powered by Ollama  
+- ⚡ LlamaIndex RAG pipeline (chunking → embedding → retrieval → synthesis)  
+- 🔁 Inngest background workflows  
+- 🖥️ Streamlit UI for user interaction  
+- 🔌 FastAPI backend with clean endpoints  
+- 🗄️ Persistent vector storage  
+- 💡 Works entirely offline  
 
 ---
+
+# 🛠️ Tech Stack
+
+| Component      | Purpose |
+|----------------|---------|
+| **Qdrant**     | Vector DB to store embeddings |
+| **LlamaIndex** | Chunking, embedding, retrieval |
+| **Ollama**     | Local LLM inference |
+| **FastAPI**    | Backend server |
+| **Inngest**    | Async workflows (ingestion jobs) |
+| **Streamlit**  | User interface |
+| **uv**         | Python env + dependency manager |
+
+---
+
+# 🔧 Installation (New System Setup)
+
+Follow these steps on any new machine before running the app.
+
+## **1️⃣ Install Python**
+https://www.python.org/downloads/
+
+---
+
+## **2️⃣ Install uv**
+```bash
+pip install uv
