@@ -115,7 +115,7 @@ async def rag_delete_pdf(ctx: inngest.Context):
         points_id = [p.id for p in results[0]]
         if points_id:
             store.client.delete(store.collection, points_id)
-        return {'delete_count': len(points_id)}
+        return {'deleted_count': len(points_id)}
     
     result = await ctx.step.run("delete-chunks", _delete)
     return result
