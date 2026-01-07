@@ -114,12 +114,15 @@ if pdf_files:
             if st.button("Delete", key=f"del_{pdf_file.name}"):
                 with st.spinner(f"Deleting {pdf_file.name}....."):
                     client = get_inngest_client()
-                    event_id = asyncio.run(client.send(
+                    result  = asyncio.run(client.send(
                         inngest.Event(
                             name="rag/delete_pdf",
                             data={'source_id': pdf_file.name}
                         )
                     ))
+
+                    event_id = result[0] if isinstance(result, list) else result
+                    
                     try:
                         output = wait_for_run_output(event_id, timeout_s=30)
                         st.success(f"Deleted {output.get("deleted_count", 0)} chunks for {pdf_file.name}")
